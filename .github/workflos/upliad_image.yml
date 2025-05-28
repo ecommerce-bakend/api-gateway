@@ -1,0 +1,16 @@
+name: Publish Docker Image
+
+on:
+  push:
+    branches:
+      - main
+      - stage
+      - develop
+
+jobs:
+  call-template:
+    uses: ecommerce-bakend/ci-templates/.github/workflows/upload_image@main
+    with:
+      image_name: ${{ secrets.DOCKERHUB_USERNAME }}/api-gateway-${{ github.ref_name }}
+      dockerfile_path: ./Dockerfile
+      context: .
