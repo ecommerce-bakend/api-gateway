@@ -9,7 +9,7 @@ on:
 
 jobs:
   call-template:
-    uses: ecommerce-bakend/ci-templates/.github/workflows/upload_image@main
+    uses: ecommerce-bakend/ci-templates/.github/workflows/upload_image.yml@main
     with:
       image_name: ${{ secrets.DOCKERHUB_USERNAME }}/api-gateway-${{ github.ref_name }}
       dockerfile_path: ./Dockerfile
