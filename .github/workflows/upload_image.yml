@@ -11,7 +11,8 @@ jobs:
   call-template:
     uses: ecommerce-bakend/ci-templates/.github/workflows/upload_image.yml@main
     with:
-      image_name: api-gateway-${{ github.ref_name }}
+      image_name: api-gateway
+      image_tag: ${{ github.ref_name }}
       dockerfile_path: ./Dockerfile
       context: .
     secrets:
